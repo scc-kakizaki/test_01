@@ -18,7 +18,7 @@ set(CMAKE_BUILD_TYPE Debug)
 add_library(SampleApp test/test_main.cpp)
 
 # ヘッダファイルのインクルードパスを指定
-include_directories(gg)
+include_directories(gg/googletest)
 
 # テスト用のソースファイルを指定
 add_executable(test_my_class test/sample_test.cpp)

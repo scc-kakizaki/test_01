@@ -1,4 +1,4 @@
-#include "../gg/googletest/include/gtest/gtest.h"
+#include "gtest/gtest.h"
 class SampleTest{};
 
 TEST(SampleTest, TestFunction1)

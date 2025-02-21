@@ -1,0 +1,34 @@
+name: C++ CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Configure CMake
+      run: |
+        cd project_root/build
+        cmake .. -G "Visual Studio 17 2022"
+
+    # プロジェクトをRelease設定でビルド
+    - name: Build project
+      run: |
+        cd project_root/build
+        cmake --build . --config Debug
+
+    # CMakeのテストランナーを使ってテストを実行
+    - name: Run testscd
+      run: |
+        cd project_root/build
+        ctest

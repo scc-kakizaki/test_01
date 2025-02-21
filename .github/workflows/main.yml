@@ -29,11 +29,11 @@ jobs:
     # プロジェクトをRelease設定でビルド
     - name: Build project
       run: |
-        cd build
+        cd project_root/build
         cmake --build . --config Debug
 
     # CMakeのテストランナーを使ってテストを実行
     - name: Run testscd
       run: |
-        cd build
+        cd project_root/build
         ctest

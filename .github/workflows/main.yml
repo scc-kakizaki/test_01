@@ -25,6 +25,7 @@ jobs:
     - name: Build project
       run: |
         cd project_root/build
+        cmake ..
         cmake --build . --config Debug
 
     # CMakeのテストランナーを使ってテストを実行

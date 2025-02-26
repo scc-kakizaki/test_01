@@ -15,10 +15,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
+
+    - name: Get GoogleTest
+      run: |
+        cd project_root
+        git submodule add https://github.com/google/googletest.git extern/googletest
+        git submodule update --init --recursive
+        
     - name: Configure CMake
       run: |
-        ls project_root/extern/googletest
         cd project_root/build
         cmake .. -G "Visual Studio 17 2022"
 

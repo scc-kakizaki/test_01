@@ -20,7 +20,7 @@ add_subdirectory(extern/googletest)
 include_directories(include)
 
 # メインのソースコードを指定（実行ファイル名 ソースファイル名）
-add_library(SampleApp test/test_main.cpp)
+add_library(SampleApp test/main.cpp)
 
 # GoogleTestライブラリをリンク
 target_link_libraries(SampleApp test gtest_main)

@@ -16,6 +16,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: mkdir build
+      run: |
+        cd project_root
+        mkdir build
+
     - name: Get GoogleTest
       run: |
         cd project_root

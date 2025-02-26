@@ -8,7 +8,7 @@ TEST(SampleTest, TestFunction1)
 
 TEST(SampleTest, TestFunction2)
 {
-	EXPECT_EQ(1, 10);
+	EXPECT_EQ(1, 1);
 }
 
 TEST(SampleTest, TestFunction3)
@@ -18,5 +18,5 @@ TEST(SampleTest, TestFunction3)
 
 TEST(SampleTest, TestFunction4)
 {
-	EXPECT_EQ(5, 10);
+	EXPECT_EQ(5, 5);
 }

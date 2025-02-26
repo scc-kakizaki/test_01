@@ -8,17 +8,20 @@ project(MyTestProject)
 set(CMAKE_CXX_STANDARD 23)
 
 # GoogleTestをサブモジュールとして追加
-# add_subdirectory(extern/googletest)
+add_subdirectory(extern/googletest)
 
 # ビルドタイプの設定
 set(CMAKE_BUILD_TYPE Debug)
+
+# ヘッダファイルのインクルードパスを指定
+include_directories(include)
 
 # メインのソースコードを指定（実行ファイル名 ソースファイル名）
 #add_executable(SampleApp SampleApp.cpp)
 add_library(SampleApp test/test_main.cpp)
 
-# ヘッダファイルのインクルードパスを指定
-include_directories(extern/googletest/googletest/include)
+# GoogleTestライブラリをリンク
+target_link_libraries(SampleApp gtest gtest_main)
 
 # テスト用のソースファイルを指定
 add_executable(test_my_class test/sample_test.cpp)

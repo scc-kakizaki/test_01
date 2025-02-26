@@ -15,17 +15,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        submodules: true  # サブモジュールを含めてリポジトリをチェックアウト
 
     - name: mkdir build
       run: |
         cd project_root
         mkdir build
-
-    - name: Get GoogleTest
-      run: |
-        cd project_root
-        git submodule add https://github.com/google/googletest.git extern/googletest
-        git submodule update --init --recursive
         
     - name: Configure CMake
       run: |

@@ -23,7 +23,7 @@ include_directories(include)
 add_library(SampleApp test/main.cpp)
 
 # GoogleTestライブラリをリンク
-target_link_libraries(SampleApp test gtest_main)
+target_link_libraries(SampleApp gtest gtest_main)
 
 # テスト用のソースファイルを指定
 add_executable(test_my_class test/sample_test.cpp)
